@@ -1,21 +1,8 @@
-(function openHostedNuvioTv() {
-  var hostedAppUrl = "https://web.nuvioapp.space/";
+(function () {
   var tvInput = window.tizen && window.tizen.tvinputdevice;
 
-  function buildFreshHostedUrl() {
-    try {
-      var url = new URL(hostedAppUrl);
-      url.searchParams.set("source", "tizenbrew");
-      url.searchParams.set("wrapper", "tizen");
-      url.searchParams.set("_cb", String(Date.now()));
-      return url.toString();
-    } catch (_) {
-      return hostedAppUrl + "?_cb=" + encodeURIComponent(String(Date.now()));
-    }
-  }
-
   if (tvInput && typeof tvInput.registerKey === "function") {
-    [
+    var keys = [
       "Back",
       "Return",
       "MediaPlay",
@@ -26,12 +13,16 @@
       "MediaRewind",
       "MediaTrackPrevious",
       "MediaTrackNext"
-    ].forEach(function registerKey(keyName) {
+    ];
+
+    for (var i = 0; i < keys.length; i++) {
       try {
-        tvInput.registerKey(keyName);
-      } catch (_) {}
-    });
+        tvInput.registerKey(keys[i]);
+      } catch (e) {}
+    }
   }
 
-  window.location.replace(buildFreshHostedUrl());
-}());
+  window.location.href =
+    "https://web.nuvioapp.space/?source=tizenbrew&wrapper=tizen&cb=" +
+    new Date().getTime();
+})();
