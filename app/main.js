@@ -1,1 +1,1 @@
-window.location.href = "https://web.nuvioapp.space/";
+window.location.href = "https://web.stremio.com/";
