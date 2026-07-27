@@ -1,27 +1,9 @@
 {
-  "name": "Old Nuvio TV",
-  "version": "0.1.10",
+  "name": "Stremio Web TV",
+  "version": "1.0.0",
   "type": "module",
-  "description": "Hosted TizenBrew wrapper for Nuvio TV",
+  "description": "Stremio Web wrapper for TizenBrew",
   "packageType": "app",
-  "appName": "Old Nuvio TV",
-  "appPath": "app/index.html",
-  "keys": [
-    "Back",
-    "Return",
-    "MediaPlay",
-    "MediaPause",
-    "MediaPlayPause",
-    "MediaStop",
-    "MediaFastForward",
-    "MediaRewind",
-    "MediaTrackPrevious",
-    "MediaTrackNext"
-  ],
-  "evaluateScriptOnDocumentStart": false,
-  "files": [
-    "app",
-    "icon.png",
-    "README.md"
-  ]
+  "appName": "Stremio Web TV",
+  "appPath": "app/index.html"
 }
